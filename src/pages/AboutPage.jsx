@@ -4,18 +4,19 @@ function AboutPage() {
       <p className="eyebrow">Om mig</p>
       <h1>Hvem er jeg?</h1>
       <p className="lead">
-        Skriv kort om din faglige retning, dine interesser og hvad du gerne vil
-        blive bedre til. Hold teksten konkret og personlig.
+        Jeg elsker at skabe – design og det visuelle er noget, jeg virkelig
+        brænder for. Jeg vil gerne have det sjovt undervejs, og jeg er altid
+        nysgerrig på at blive bedre til design.
       </p>
 
       <section className="info-list" aria-label="Om mig detaljer">
         <div>
           <h2>Jeg arbejder med</h2>
-          <p>React, HTML, CSS, JavaScript, designproces og digitale produkter.</p>
+          <p>Frontend, design og alt det visuelle i digitale produkter.</p>
         </div>
         <div>
           <h2>Jeg er nysgerrig på</h2>
-          <p>Brugeroplevelser, visuel identitet og hvordan kode bliver til noget brugbart.</p>
+          <p>Designets muligheder, og hvordan jeg kan blive endnu dygtigere til det.</p>
         </div>
       </section>
     </div>

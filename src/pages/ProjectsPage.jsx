@@ -13,24 +13,26 @@ function ProjectsPage() {
         </p>
       </section>
 
-      <section className="project-grid" aria-label="Projektliste">
+      <ul className="project-list" aria-label="Projektliste">
         {projects.map((project) => (
-          <article className="project-card" key={project.slug}>
-            <img src={project.image} alt={`Preview af ${project.title}`} />
-            <div className="project-card-content">
-              <p className="eyebrow">{project.year}</p>
-              <h2>{project.title}</h2>
-              <p>{project.summary}</p>
-              <ul className="tag-list">
-                {project.tags.map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
-              <Link to={`/projects/${project.slug}`}>Se projekt</Link>
-            </div>
-          </article>
+          <li key={project.slug}>
+            <Link className="project-row" to={`/projects/${project.slug}`}>
+              <div className="project-row-heading">
+                <h2>{project.title}</h2>
+                <span className="project-row-arrow" aria-hidden="true">
+                  →
+                </span>
+              </div>
+              <p className="project-row-summary">{project.summary}</p>
+              <p className="project-row-meta">
+                {[project.category, project.market, project.industry]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </p>
+            </Link>
+          </li>
         ))}
-      </section>
+      </ul>
     </div>
   );
 }
