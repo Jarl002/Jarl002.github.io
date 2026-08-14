@@ -206,7 +206,8 @@ p {
 .project-card img {
   width: 100%;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
+  background: #ffffff;
 }
 
 .project-card-content {
@@ -524,6 +525,37 @@ p {
   font-weight: 800;
 }
 
+.site-footer {
+  border-top: 1px solid #e5ddd2;
+  margin-top: 3rem;
+}
+
+.site-footer-inner {
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.site-footer h2 {
+  margin-bottom: 2rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-columns a {
+  color: #1d2430;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-columns a:hover {
+  color: #a3282c;
+}
+
 @media (max-width: 720px) {
   .site-header-inner {
     align-items: flex-start;
@@ -542,5 +574,10 @@ p {
   .case-header,
   .case-split {
     grid-template-columns: 1fr;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
