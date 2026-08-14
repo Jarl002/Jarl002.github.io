@@ -10,7 +10,12 @@ const projects = [
       "En webapp der kombinerer habit tracking, fysisk sundhed og social motivation – bygget på idéen om, at selvudvikling skal føles som normen, ikke som noget svært opnåeligt.",
     tags: ["UX/UI", "Webapp", "Figma", "React", "Supabase"],
     image: `${import.meta.env.BASE_URL}projects/fjera/logo.png`,
-    links: [],
+    links: [
+      {
+        label: "GitHub repo",
+        href: "https://github.com/Jarl002/Web-App-Eksamen",
+      },
+    ],
     caseStudy: {
       heroImage: `${import.meta.env.BASE_URL}projects/fjera/design-system.png`,
       role: "Eksamensprojekt udarbejdet i gruppe (2. semester, Multimedie Designer). Mit fokus var på UX-research, informationsarkitektur og UI-design.",
@@ -104,7 +109,12 @@ const projects = [
       "En kurateret high-end fashion-webshop bygget til unge, modeinteresserede brugere, der ser tøj som identitet – ikke bare beklædning.",
     tags: ["UX/UI", "Branding", "Figma", "React", "E-commerce"],
     image: `${import.meta.env.BASE_URL}projects/tokyou/logo.png`,
-    links: [],
+    links: [
+      {
+        label: "GitHub repo",
+        href: "https://github.com/Jarl002/tokyou-eksamen",
+      },
+    ],
     caseStudy: {
       heroImage: `${import.meta.env.BASE_URL}projects/tokyou/brand-system.png`,
       facts: [
