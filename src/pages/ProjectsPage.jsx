@@ -7,10 +7,7 @@ function ProjectsPage() {
       <section className="section intro">
         <p className="eyebrow">Projekter</p>
         <h1>Mine projekter</h1>
-        <p>
-          Udskift eksemplerne med dine egne projekter. Brug korte beskrivelser,
-          tydelige billeder og links til live versioner eller GitHub repos.
-        </p>
+        <p>Herunder kan du se mine projekter</p>
       </section>
 
       <ul className="project-list" aria-label="Projektliste">

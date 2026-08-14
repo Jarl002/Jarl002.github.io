@@ -2,7 +2,7 @@ function ContactPage() {
   return (
     <div className="page narrow">
       <p className="eyebrow">Kontakt</p>
-      <h1>Lad os tale sammen.</h1>
+      <h1>Kontakt mig her.</h1>
       <p className="lead">Skriv eller ring til mig.</p>
 
       <ul className="contact-list">
