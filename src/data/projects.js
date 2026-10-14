@@ -189,6 +189,19 @@ const projects = [
       ],
     },
   },
+  {
+    slug: "larchive",
+    title: "L'ARCHIVE",
+    year: "2026",
+    category: "Subbrand & prototype",
+    market: "B2C",
+    industry: "Fashion & Re-commerce",
+    summary:
+      "Et secondhand-subbrand for LA RŌUGE, der gør det nemmere at sælge brugt LA RŌUGE tilbage end på Vinted – fra navn og visuel identitet til en klikbar prototype for sælger og køber.",
+    tags: ["Branding", "UX/UI", "Figma"],
+    image: `${import.meta.env.BASE_URL}projects/larchive/startside.png`,
+    links: [],
+  },
 ];
 
 export default projects;
