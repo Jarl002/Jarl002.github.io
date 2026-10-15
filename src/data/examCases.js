@@ -1,4 +1,5 @@
 const img = (file) => `${import.meta.env.BASE_URL}projects/larchive/${file}`;
+const vuuhImg = (file) => `${import.meta.env.BASE_URL}projects/vuuh/${file}`;
 
 const examCases = [
   {
@@ -163,6 +164,176 @@ const examCases = [
       "DBA: Genbrugsindeks 2024",
       "Undervisning: IXD, subbranding og visuel identitet",
       "Produktbilleder i prototypen tilhører LA RŌUGE. Moodboardet består af referencebilleder.",
+    ],
+  },
+  {
+    slug: "vuuh",
+    eyebrow: "Product Optimization · Case 2",
+    title: "Vuuh for Shopify",
+    lead: "En tydeligere onboarding fra installation til aktivering, så nye forhandlere kan forbinde Vuuh og Shopify uden personlig hjælp.",
+    heroImage: vuuhImg("flow-1-welcome.png"),
+    heroAlt: "Velkomstskærmen i den nye onboarding med en stepper i fire trin",
+    facts: [
+      { label: "Opgave", value: "Design Better Onboarding" },
+      { label: "Kunde", value: "Vuuh" },
+      { label: "Periode", value: "7/9 – 18/9 2026" },
+      { label: "Team", value: "Gruppeprojekt" },
+      { label: "Værktøjer", value: "Figma" },
+    ],
+    contribution:
+      "I projektet deltog jeg i dele af UX-analysen og arbejdede med redesignet af onboardingen i Figma.",
+
+    sections: [
+      {
+        id: "udfordring",
+        label: "Case og udfordring",
+        paragraphs: [
+          "Vuuh sender produktdata fra modebrands direkte ind i forhandlernes Shopify-butikker. Onboardingen blev bygget til en privat beta, hvor Vuuh hjalp hver kunde personligt. Nu skal appen skaleres, og nye kunder skal kunne installere, forstå og opsætte den selv.",
+          "Opgaven var at auditere den nuværende onboarding og designe en bedre selvbetjeningsløsning. Designudfordringen: Den skal være enkel nok for Charlotte, der ejer en fysisk butik og har brug for tryghed, uden at blive langsom for Emma, der er vant til Shopify.",
+        ],
+        sideImage: {
+          src: vuuhImg("before-success.png"),
+          alt: "Vuuhs nuværende skærm efter installation af Shopify-appen",
+          caption: "Vuuhs skærm efter installation i dag",
+        },
+      },
+      {
+        id: "undersoegelse",
+        label: "Undersøgelse og prioritering",
+        paragraphs: [
+          "Vi gennemgik onboardingen fra en førstegangsbrugers perspektiv med Heuristic Evaluation og Cognitive Walkthrough og samlede fundene i Finding Cards. Tre findings fik høj prioritet, fordi de pegede på samme kerne: Brugeren mangler sikkerhed i flowet. Feedback fra Vuuh bekræftede dele af vores fund.",
+          "Vi prioriterede Charlotte som primær persona, fordi hun er mest sårbar over for den usikkerhed, fundene viste.",
+        ],
+        choices: [
+          { title: "Hvad skal jeg gøre?", text: "Dashboardet viser flere handlinger på én gang uden rækkefølge, og Shopify ligger blandt mange andre integrationer." },
+          { title: "Har jeg valgt det rigtige?", text: "Sammenhængen mellem Shopifys domæne og Vuuhs \"Shop name\" er uklar." },
+          { title: "Lykkedes det?", text: "Bekræftelsen efter forbindelsen er for svag til at skabe sikkerhed." },
+        ],
+        sideImage: {
+          src: vuuhImg("before-dashboard.png"),
+          alt: "Vuuhs nuværende dashboard med flere handlinger på samme tid",
+          caption: "Vuuhs dashboard i dag",
+        },
+      },
+      {
+        id: "loesning",
+        label: "Løsning og faglige valg",
+        paragraphs: [
+          "I stedet for at redesigne hele platformen valgte vi et onboarding-lag, der gør progressionen synlig og placerer hjælpen dér, hvor usikkerheden opstår. Hvert valg svarer på et finding og bygger på Don Normans principper for interaktionsdesign.",
+          "Målet er ikke flere onboarding-elementer, men mindre usikkerhed og mindre behov for hjælp.",
+        ],
+        choices: [
+          { title: "Stepper i fire trin", text: "og én primær handling viser, hvor brugeren er, og hvad næste skridt er (Gulf of Execution, signifiers)" },
+          { title: "Hjælp i konteksten", text: "forklarer Shop name med et eksempel, dér hvor feltet skal udfyldes (conceptual model, mapping)" },
+          { title: "States frem for skærme", text: "loading, success og næste skridt viser, hvad systemet gør (feedback, Gulf of Evaluation)" },
+          { title: "Valgfri hjælp", text: "så Emma kan følge trinene uden at skulle igennem forklaringer" },
+        ],
+        image: {
+          src: vuuhImg("error-inline.png"),
+          alt: "Shop name-feltet med hjælpetekst og fejlbeskeden \"We couldn't find this Shopify store\"",
+          caption: "Shop name-feltet med hjælp og fejlbesked",
+          small: true,
+        },
+      },
+    ],
+
+    walkthrough: {
+      label: "Visuel gennemgang",
+      intro: "Det nye flow går fra velkomst til forbundet butik i fire trin og kan klikkes igennem i prototypen nedenfor.",
+      flows: [
+        {
+          title: "Onboarding-flowet",
+          screens: [
+            { src: vuuhImg("flow-1-welcome.png"), caption: "1. Velkomst" },
+            { src: vuuhImg("shop-name-guide.png"), caption: "2. Find dit shop name" },
+            { src: vuuhImg("flow-2-connecting.png"), caption: "3. Forbinder" },
+            { src: vuuhImg("flow-3-success.png"), caption: "4. Success og næste skridt" },
+            { src: vuuhImg("flow-4-done.png"), caption: "5. Færdig" },
+          ],
+        },
+        {
+          title: "Fejltilstand",
+          screens: [
+            { src: vuuhImg("error-modal.png"), caption: "Forbindelsen fejler" },
+          ],
+        },
+      ],
+      embedFit: true,
+      embed:
+        "https://embed.figma.com/proto/PEUH5ns1BrzuNaI75Zu5F5/Vuuh---Case-2---3.sem?node-id=125-6&scaling=scale-down&content-scaling=fixed&starting-point-node-id=125%3A6&page-id=0%3A1&embed-host=share",
+    },
+
+    result: {
+      label: "Resultat og dokumentation",
+      paragraphs: [
+        "Resultatet er en klikbar Figma-prototype, som blev præsenteret for Vuuh. Sammenlignet med den nuværende onboarding:",
+      ],
+      comparison: {
+        headers: ["", "Vuuh i dag", "Nyt flow"],
+        rows: [
+          ["Retning", "Flere handlinger på dashboardet uden rækkefølge", "Stepper i fire trin med én primær handling"],
+          ["Shop name", "Uklart, hvilken Shopify-oplysning der skal bruges", "Hjælp i feltet og en guide med eksempel"],
+          ["Efter forbindelsen", "Svag bekræftelse", "Loading, success og næste skridt"],
+        ],
+      },
+      pairsIntro:
+        "Et Accessibility Design Check efter WCAG 2.2 kvalificerede vores første prototype. Af 12 punkter skulle 7 forbedres. Vi prioriterede fejlhåndtering, fordi prototypen kun dækkede den vellykkede vej, og kontrast, som gik igen på alle skærme:",
+      pairs: [
+        {
+          before: { src: vuuhImg("contrast-1-before.png"), alt: "Søgefelt med kontrast 1,87:1 før ændringen" },
+          after: { src: vuuhImg("contrast-1-after.png"), alt: "Søgefelt med kontrast 6,58:1 efter ændringen" },
+          caption: "Kontrast 1,87:1 → 6,58:1",
+        },
+        {
+          before: { src: vuuhImg("contrast-2-before.png"), alt: "Shop name-eksempel med kontrast 2,23:1 før ændringen" },
+          after: { src: vuuhImg("contrast-2-after.png"), alt: "Shop name-eksempel med kontrast 4,76:1 efter ændringen" },
+          caption: "Kontrast 2,23:1 → 4,76:1",
+        },
+      ],
+      after: "Begge tekster opfylder nu WCAG AA. Prototypen er ikke brugertestet, så effekten på gennemførelse er ikke målt.",
+    },
+
+    reflection: {
+      label: "Faglig refleksion",
+      paragraphs: [
+        "Vi fravalgte at redesigne hele platformen og fokuserede på forbindelsen mellem Vuuh og Shopify, hvor fundene var tydeligst. Det største kompromis var mellem de to personas: Mere hjælp gør Charlotte tryg, men kan bremse Emma. Derfor er hjælpen placeret i konteksten og valgfri frem for et obligatorisk forløb.",
+        "Accessibility-checket viste, at vi selv havde designet ud fra, at alt går godt. Vi lærte, at fejltilstande skal designes fra starten, ikke tilføjes til sidst.",
+        "Næste skridt er en test med brugere, der ligner begge personas, og en test af tastaturnavigation og fokus, som ikke kunne vurderes på statiske skærme.",
+      ],
+    },
+
+    business: {
+      label: "Forretningspotentiale",
+      items: [
+        { title: "Vuuh", text: "kan skalere uden at onboarde hver kunde manuelt. Ifølge Vuuh påvirker onboardingen direkte aktivering, konvertering og vækst." },
+        { title: "Forhandlere", text: "kommer hurtigere og mere sikkert frem til de første produkter i Shopify." },
+        { title: "Supporten", text: "får færre henvendelser, fordi hjælpen ligger i flowet." },
+      ],
+      basis: "Vurderingen bygger på Vuuhs brief og vores audit, ikke på målte data.",
+    },
+
+    links: [
+      {
+        label: "UX Audit Summary (PDF)",
+        href: vuuhImg("vuuh-ux-audit-summary.pdf"),
+      },
+      {
+        label: "Figma-prototype",
+        href: "https://www.figma.com/proto/PEUH5ns1BrzuNaI75Zu5F5/Vuuh---Case-2---3.sem?node-id=125-6&scaling=scale-down&content-scaling=fixed&starting-point-node-id=125%3A6&page-id=0%3A1",
+      },
+      {
+        label: "Figma-designfil",
+        href: "https://www.figma.com/design/PEUH5ns1BrzuNaI75Zu5F5/Vuuh---Case-2---3.sem?node-id=0-1&t=qyuWf9tYaRsCVdGK-1",
+      },
+    ],
+
+    sources: [
+      "Vuuh: casepræsentation for Erhvervsakademi Aarhus, 7/9 2026",
+      "Nielsen, J.: 10 Usability Heuristics for User Interface Design",
+      "Norman, D.: The Design of Everyday Things",
+      "W3C: Web Content Accessibility Guidelines (WCAG) 2.2",
+      "Undervisning: UX Audit, Interaction Redesign og Accessibility Design Check",
+      "Skærmbilleder af Vuuhs nuværende platform tilhører Vuuh.",
     ],
   },
 ];

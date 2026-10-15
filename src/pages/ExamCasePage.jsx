@@ -161,7 +161,7 @@ function ExamCasePage({ slug }) {
           </div>
         ))}
 
-        <div className="exam-embed">
+        <div className={`exam-embed${walkthrough.embedFit ? " exam-embed-fit" : ""}`}>
           <iframe
             src={walkthrough.embed}
             title={`${examCase.title}: klikbar Figma-prototype`}
@@ -200,6 +200,31 @@ function ExamCasePage({ slug }) {
             </tbody>
           </table>
         </div>
+
+        {result.pairs && (
+          <>
+            <div className="exam-text">
+              <p>{result.pairsIntro}</p>
+            </div>
+            <div className="exam-pairs">
+              {result.pairs.map((pair) => (
+                <figure className="exam-pair" key={pair.caption}>
+                  <div className="exam-pair-images">
+                    <div>
+                      <span className="exam-pair-label">Før</span>
+                      <img src={pair.before.src} alt={pair.before.alt} />
+                    </div>
+                    <div>
+                      <span className="exam-pair-label">Efter</span>
+                      <img src={pair.after.src} alt={pair.after.alt} />
+                    </div>
+                  </div>
+                  <figcaption>{pair.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </>
+        )}
 
         <p className="exam-note">{result.after}</p>
       </section>

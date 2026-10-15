@@ -204,6 +204,13 @@
   overflow: hidden;
 }
 
+/* 16:10 desktop frames plus the space Figma reserves above and below them (controls and title bar), so the frame fills the width. */
+.exam-embed.exam-embed-fit {
+  aspect-ratio: auto;
+  max-height: none;
+  height: calc(min(100vw - 2rem, 1200px) / 1.6 + 170px);
+}
+
 .exam-embed iframe {
   width: 100%;
   height: 100%;
@@ -247,6 +254,43 @@
   color: #111827;
 }
 
+.exam-pairs {
+  display: grid;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.exam-pair {
+  margin: 0;
+}
+
+.exam-pair-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.exam-pair-images img {
+  width: 100%;
+  border: 1px solid #e5ddd2;
+  border-radius: 0.75rem;
+}
+
+.exam-pair-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #a3282c;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.exam-pair figcaption {
+  margin-top: 0.6rem;
+  color: #111827;
+  font-weight: 700;
+}
+
 .exam-note {
   max-width: 760px;
   color: #7c8a9a;
@@ -288,7 +332,8 @@
 @media (max-width: 720px) {
   .exam-header,
   .exam-split,
-  .exam-gallery-images {
+  .exam-gallery-images,
+  .exam-pair-images {
     grid-template-columns: 1fr;
   }
 

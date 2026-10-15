@@ -202,6 +202,19 @@ const projects = [
     image: `${import.meta.env.BASE_URL}projects/larchive/startside.png`,
     links: [],
   },
+  {
+    slug: "vuuh",
+    title: "Vuuh for Shopify",
+    year: "2026",
+    category: "UX audit & onboarding",
+    market: "B2B",
+    industry: "Fashion tech",
+    summary:
+      "En tydeligere onboarding fra installation til aktivering, så nye forhandlere kan forbinde Vuuh og Shopify uden personlig hjælp – fra UX audit til accessibility-kvalificeret prototype.",
+    tags: ["UX audit", "Interaction design", "Accessibility", "Figma"],
+    image: `${import.meta.env.BASE_URL}projects/vuuh/flow-1-welcome.png`,
+    links: [],
+  },
 ];
 
 export default projects;

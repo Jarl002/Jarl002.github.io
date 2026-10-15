@@ -20,6 +20,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="/projects/larchive" element={<ExamCasePage slug="larchive" />} />
+          <Route path="/projects/vuuh" element={<ExamCasePage slug="vuuh" />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
