@@ -10,6 +10,7 @@ const projects = [
       "En webapp der kombinerer habit tracking, fysisk sundhed og social motivation – bygget på idéen om, at selvudvikling skal føles som normen, ikke som noget svært opnåeligt.",
     tags: ["UX/UI", "Webapp", "Figma", "React", "Supabase"],
     image: `${import.meta.env.BASE_URL}projects/fjera/logo.png`,
+    cardImage: `${import.meta.env.BASE_URL}projects/fjera/card.png`,
     links: [
       {
         label: "GitHub repo",
@@ -109,6 +110,7 @@ const projects = [
       "En kurateret high-end fashion-webshop bygget til unge, modeinteresserede brugere, der ser tøj som identitet – ikke bare beklædning.",
     tags: ["UX/UI", "Branding", "Figma", "React", "E-commerce"],
     image: `${import.meta.env.BASE_URL}projects/tokyou/logo.png`,
+    cardImage: `${import.meta.env.BASE_URL}projects/tokyou/card.png`,
     links: [
       {
         label: "GitHub repo",
@@ -190,16 +192,17 @@ const projects = [
     },
   },
   {
-    slug: "larchive",
-    title: "L'ARCHIVE",
+    slug: "mellemrum",
+    title: "Mellemrum",
     year: "2026",
-    category: "Subbrand & prototype",
+    category: "React & Supabase",
     market: "B2C",
-    industry: "Fashion & Re-commerce",
+    industry: "Kultur & events",
     summary:
-      "Et secondhand-subbrand for LA RŌUGE, der gør det nemmere at sælge brugt LA RŌUGE tilbage end på Vinted – fra navn og visuel identitet til en klikbar prototype for sælger og køber.",
-    tags: ["Branding", "UX/UI", "Figma"],
-    image: `${import.meta.env.BASE_URL}projects/larchive/startside.png`,
+      "En hurtigt bygget React-prototype for en kultur- og eventplatform i Aarhus, udviklet til en robust og tilgængelig løsning med et tilmeldingsflow, der virker.",
+    tags: ["React", "Supabase", "Accessibility", "Performance"],
+    image: `${import.meta.env.BASE_URL}projects/mellemrum/landing.jpg`,
+    cardPosition: "left center",
     links: [],
   },
   {
@@ -213,19 +216,21 @@ const projects = [
       "En tydeligere onboarding fra installation til aktivering, så nye forhandlere kan forbinde Vuuh og Shopify uden personlig hjælp – fra UX audit til accessibility-kvalificeret prototype.",
     tags: ["UX audit", "Interaction design", "Accessibility", "Figma"],
     image: `${import.meta.env.BASE_URL}projects/vuuh/flow-1-welcome.png`,
+    cardImage: `${import.meta.env.BASE_URL}projects/vuuh/card.jpg`,
     links: [],
   },
   {
-    slug: "mellemrum",
-    title: "Mellemrum",
+    slug: "larchive",
+    title: "L'ARCHIVE",
     year: "2026",
-    category: "React & Supabase",
+    category: "Subbrand & prototype",
     market: "B2C",
-    industry: "Kultur & events",
+    industry: "Fashion & Re-commerce",
     summary:
-      "En hurtigt bygget React-prototype for en kultur- og eventplatform i Aarhus, udviklet til en robust og tilgængelig løsning med et tilmeldingsflow, der virker.",
-    tags: ["React", "Supabase", "Accessibility", "Performance"],
-    image: `${import.meta.env.BASE_URL}projects/mellemrum/landing.jpg`,
+      "Et secondhand-subbrand for LA RŌUGE, der gør det nemmere at sælge brugt LA RŌUGE tilbage end på Vinted – fra navn og visuel identitet til en klikbar prototype for sælger og køber.",
+    tags: ["Branding", "UX/UI", "Figma"],
+    image: `${import.meta.env.BASE_URL}projects/larchive/startside.png`,
+    cardImage: `${import.meta.env.BASE_URL}projects/larchive/card.png`,
     links: [],
   },
 ];

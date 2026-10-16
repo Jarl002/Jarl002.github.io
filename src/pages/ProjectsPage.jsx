@@ -13,19 +13,27 @@ function ProjectsPage() {
       <ul className="project-list" aria-label="Projektliste">
         {projects.map((project) => (
           <li key={project.slug}>
-            <Link className="project-row" to={`/projects/${project.slug}`}>
-              <div className="project-row-heading">
-                <h2>{project.title}</h2>
-                <span className="project-row-arrow" aria-hidden="true">
-                  →
-                </span>
+            <Link className="project-row has-thumb" to={`/projects/${project.slug}`}>
+              <div className="project-row-text">
+                <div className="project-row-heading">
+                  <h2>{project.title}</h2>
+                  <span className="project-row-arrow" aria-hidden="true">
+                    →
+                  </span>
+                </div>
+                <p className="project-row-summary">{project.summary}</p>
+                <p className="project-row-meta">
+                  {[project.category, project.market, project.industry]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </p>
               </div>
-              <p className="project-row-summary">{project.summary}</p>
-              <p className="project-row-meta">
-                {[project.category, project.market, project.industry]
-                  .filter(Boolean)
-                  .join(" · ")}
-              </p>
+              <img
+                className="project-row-thumb"
+                src={project.cardImage ?? project.caseStudy?.heroImage ?? project.image}
+                alt=""
+                style={project.cardPosition ? { objectPosition: project.cardPosition } : undefined}
+              />
             </Link>
           </li>
         ))}
