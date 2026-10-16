@@ -62,7 +62,7 @@ function ExamCasePage({ slug }) {
           </div>
         </div>
 
-        <div className="exam-phone">
+        <div className={examCase.heroWide ? "exam-hero-wide" : "exam-phone"}>
           <img src={examCase.heroImage} alt={examCase.heroAlt} />
         </div>
       </header>
@@ -112,6 +112,68 @@ function ExamCasePage({ slug }) {
             </ul>
           )}
 
+          {section.dataModel && (
+            <figure className="exam-datamodel">
+              <h3>{section.dataModel.title}</h3>
+              {[
+                { label: "Før", tables: section.dataModel.before, note: section.dataModel.beforeNote },
+                { label: "Efter", tables: section.dataModel.after, note: section.dataModel.afterNote, linked: true },
+              ].map((row) => (
+                <div className="exam-datamodel-row" key={row.label}>
+                  <span className="exam-pair-label">{row.label}</span>
+                  <div className="exam-datamodel-tables">
+                    {row.tables.map((table, index) => (
+                      <div className="exam-datamodel-group" key={table.name}>
+                        {row.linked && index > 0 && (
+                          <span className="exam-datamodel-link" aria-hidden="true">
+                            1 → mange
+                          </span>
+                        )}
+                        <table className="exam-db-table">
+                          <thead>
+                            <tr>
+                              <th>{table.name}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {table.fields.map((field) => (
+                              <tr
+                                key={field.name}
+                                className={field.key ? "is-key" : field.repeated ? "is-repeated" : undefined}
+                              >
+                                <td>
+                                  {field.name}
+                                  {field.key && <span className="exam-db-tag">FK</span>}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="exam-note">{row.note}</p>
+                </div>
+              ))}
+            </figure>
+          )}
+
+          {section.code && (
+            <figure className="exam-code">
+              <h3>{section.code.title}</h3>
+              <div className="exam-code-pair">
+                {[section.code.before, section.code.after].map((block) => (
+                  <div key={block.label}>
+                    <span className="exam-pair-label">{block.label}</span>
+                    <pre>
+                      <code>{block.code}</code>
+                    </pre>
+                  </div>
+                ))}
+              </div>
+            </figure>
+          )}
+
           {section.image && (
             <figure
               className={`exam-figure${section.image.small ? " exam-figure-small" : ""}`}
@@ -140,36 +202,38 @@ function ExamCasePage({ slug }) {
         </section>
       ))}
 
-      <section className="exam-section">
-        <p className="exam-number">{nextNumber()}</p>
-        <h2>{walkthrough.label}</h2>
-        <div className="exam-text">
-          <p>{walkthrough.intro}</p>
-        </div>
-
-        {walkthrough.flows.map((flow) => (
-          <div className="exam-flow" key={flow.title}>
-            <h3>{flow.title}</h3>
-            <ol className="exam-screens">
-              {flow.screens.map((screen) => (
-                <li key={screen.src}>
-                  <img src={screen.src} alt={`${flow.title}: ${screen.caption}`} />
-                  <span>{screen.caption}</span>
-                </li>
-              ))}
-            </ol>
+      {walkthrough && (
+        <section className="exam-section">
+          <p className="exam-number">{nextNumber()}</p>
+          <h2>{walkthrough.label}</h2>
+          <div className="exam-text">
+            <p>{walkthrough.intro}</p>
           </div>
-        ))}
 
-        <div className={`exam-embed${walkthrough.embedFit ? " exam-embed-fit" : ""}`}>
-          <iframe
-            src={walkthrough.embed}
-            title={`${examCase.title}: klikbar Figma-prototype`}
-            allowFullScreen
-            loading="lazy"
-          />
-        </div>
-      </section>
+          {walkthrough.flows.map((flow) => (
+            <div className="exam-flow" key={flow.title}>
+              <h3>{flow.title}</h3>
+              <ol className="exam-screens">
+                {flow.screens.map((screen) => (
+                  <li key={screen.src}>
+                    <img src={screen.src} alt={`${flow.title}: ${screen.caption}`} />
+                    <span>{screen.caption}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+
+          <div className={`exam-embed${walkthrough.embedFit ? " exam-embed-fit" : ""}`}>
+            <iframe
+              src={walkthrough.embed}
+              title={`${examCase.title}: klikbar Figma-prototype`}
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+        </section>
+      )}
 
       <section className="exam-section">
         <p className="exam-number">{nextNumber()}</p>
@@ -200,6 +264,33 @@ function ExamCasePage({ slug }) {
             </tbody>
           </table>
         </div>
+
+        {result.bars && (
+          <figure className="exam-bars">
+            <figcaption className="exam-bars-title">{result.bars.title}</figcaption>
+            <div
+              role="img"
+              aria-label={result.bars.items.map((item) => `${item.label}: ${item.display}`).join(", ")}
+            >
+              {result.bars.items.map((item, index) => {
+                const max = Math.max(...result.bars.items.map((entry) => entry.value));
+                return (
+                  <div className="exam-bar-row" key={item.label} title={`${item.label}: ${item.display}`}>
+                    <span className="exam-bar-label">{item.label}</span>
+                    <div className="exam-bar-track">
+                      <div
+                        className={`exam-bar${index === 0 ? " is-before" : ""}`}
+                        style={{ width: `calc((100% - 5rem) * ${item.value / max})` }}
+                      />
+                      <span className="exam-bar-value">{item.display}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="exam-note">{result.bars.note}</p>
+          </figure>
+        )}
 
         {result.pairs && (
           <>

@@ -215,6 +215,19 @@ const projects = [
     image: `${import.meta.env.BASE_URL}projects/vuuh/flow-1-welcome.png`,
     links: [],
   },
+  {
+    slug: "mellemrum",
+    title: "Mellemrum",
+    year: "2026",
+    category: "React & Supabase",
+    market: "B2C",
+    industry: "Kultur & events",
+    summary:
+      "En hurtigt bygget React-prototype for en kultur- og eventplatform i Aarhus, udviklet til en robust og tilgængelig løsning med et tilmeldingsflow, der virker.",
+    tags: ["React", "Supabase", "Accessibility", "Performance"],
+    image: `${import.meta.env.BASE_URL}projects/mellemrum/landing.jpg`,
+    links: [],
+  },
 ];
 
 export default projects;

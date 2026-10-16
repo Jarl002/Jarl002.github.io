@@ -1,5 +1,6 @@
 const img = (file) => `${import.meta.env.BASE_URL}projects/larchive/${file}`;
 const vuuhImg = (file) => `${import.meta.env.BASE_URL}projects/vuuh/${file}`;
+const mellemrumImg = (file) => `${import.meta.env.BASE_URL}projects/mellemrum/${file}`;
 
 const examCases = [
   {
@@ -54,7 +55,7 @@ const examCases = [
         label: "Løsning og faglige valg",
         paragraphs: [
           "Navnet L'ARCHIVE fortæller, at tøjet er udvalgte produkter, man passer på, ikke rester. Sloganet \"Archived, Not Forgotten\" bygger videre på LA RŌUGEs eget \"Worn Beautifully\" uden at overtage det. Tonen overfører moderbrandets selvkærlighed fra kvinden til tøjet: Brugt er aldrig slidt, men smukt båret.",
-          "L'ARCHIVE er bygget som et endorsed brand: Afsenderen \"by LA RŌUGE\" giver tillid, mens navnet giver subbrandet sit eget liv. Subbrandet låner det genkendelige: det franske sprog, det tynde ordmærke og den røde farve. Det bryder med en dyb vinrød på varme neutraler, et monogram, et arkivnummer på hvert produkt og ensartede produktbilleder uden model.",
+          "L'ARCHIVE er bygget som et endorsed brand: Afsenderen \"by LA RŌUGE\" giver tillid, mens navnet giver subbrandet sit eget liv. Subbrandet låner det genkendelige: det franske sprog, det tynde ordmærke og den røde farve. Det bryder med en dyb vinrød, et monogram, et arkivnummer på hvert produkt og produktbilleder uden model.",
         ],
         image: { src: img("moodboard.jpg"), alt: "Moodboard for L'ARCHIVE med vinrød, strik og varmt lys" },
         gallery: {
@@ -70,7 +71,6 @@ const examCases = [
           { title: "Positiv tilstandsskala", text: "Comme neuve, Joliment portée og Bien aimée" },
           { title: "Guidede billeder", text: "så alle produkter fremstår ens, modsat de uensartede billeder på Vinted" },
           { title: "Pris efter tilstand", text: "køberen betaler 55, 45 eller 35 % af nyprisen" },
-          { title: "Valgfri udbetaling", text: "gavekort eller udbetaling" },
           { title: "QR-kode", text: "i stedet for et label, der skal printes" },
           { title: "Følg modellen", text: "besked, når en model kommer i ens størrelse" },
         ],
@@ -79,7 +79,7 @@ const examCases = [
 
     walkthrough: {
       label: "Visuel gennemgang",
-      intro: "Én forside, to veje. Begge rejser er designet mobile first og kan klikkes igennem i prototypen nedenfor.",
+      intro: "Én forside, to veje, som kan klikkes igennem i prototypen nedenfor.",
       flows: [
         {
           title: "Sælgerflowet",
@@ -120,7 +120,6 @@ const examCases = [
           ["Hvem kan sælge", "Kun kunder med køb i webshoppen", "Alle med style-nummeret, også forhandlerkunder"],
           ["Find produktet", "Vælg fra listen over tidligere køb", "Skriv style-nummeret fra vaskemærket"],
           ["Tilstand og billeder", "Indgår ikke", "Positiv skala og to guidede billeder"],
-          ["Udbetaling", "Gavekort på 30 % af nyprisen", "Gavekort eller udbetaling"],
           ["Afsendelse", "Pakkekode skrives på pakken", "QR-kode i pakkeshop eller butik"],
         ],
       },
@@ -130,7 +129,7 @@ const examCases = [
     reflection: {
       label: "Faglig refleksion",
       paragraphs: [
-        "Jeg fravalgte et koncept, hvor hver model fik sin egen side, for rigtig at give en følelse af, at man befinder sig i LA RŌUGEs arkiv. Men fordi siderne ville stå tomme med kun 68 indleverede varer i år, blev idéen droppet. Jeg fravalgte også muligheden for, at nye kunder kan få indsigt i tøjets tidligere ejere. Det gjorde jeg for at fokusere på tøjets værdi. Modelfotos fravalgte jeg, fordi køberen skal se præcis det produkt, hun får, uden forvirring.",
+        "Jeg fravalgte et koncept, hvor hver model fik sin egen side, for rigtig at give en følelse af, at man befinder sig i LA RŌUGEs arkiv. Men fordi siderne ville stå tomme med kun 68 indleverede varer i år, blev idéen droppet. Jeg fravalgte også at vise tøjets tidligere ejere for at fokusere på tøjets værdi. Modelfotos fravalgte jeg, fordi køberen skal se præcis det produkt, hun får, uden forvirring.",
         "Midtvejs blev det tydeligt, at brandet var stærkt verbalt, men visuelt for tæt på moderbrandet. Arkivnummeret og monogrammet blev svaret. Jeg lærte, at et subbrand bliver selvstændigt gennem elementer, det ejer, ikke gennem UI-mønstre.",
         "En svaghed er prismodellen: Køberprisen ligger over Vinted og hviler på, at produkterne er tjekket af LA RŌUGE. Et potentielt næste skridt er at teste sælgerflowet med fem kunder, især style-nummeret og tilstandsskalaen.",
       ],
@@ -219,14 +218,13 @@ const examCases = [
         id: "loesning",
         label: "Løsning og faglige valg",
         paragraphs: [
-          "I stedet for at redesigne hele platformen valgte vi et onboarding-lag, der gør progressionen synlig og placerer hjælpen dér, hvor usikkerheden opstår. Hvert valg svarer på et finding og bygger på Don Normans principper for interaktionsdesign.",
+          "Vi valgte et onboarding-lag, der gør progressionen synlig og placerer hjælpen dér, hvor usikkerheden opstår. Hvert valg svarer på et finding og bygger på Don Normans principper for interaktionsdesign.",
           "Målet er ikke flere onboarding-elementer, men mindre usikkerhed og mindre behov for hjælp.",
         ],
         choices: [
           { title: "Stepper i fire trin", text: "og én primær handling viser, hvor brugeren er, og hvad næste skridt er (Gulf of Execution, signifiers)" },
           { title: "Hjælp i konteksten", text: "forklarer Shop name med et eksempel, dér hvor feltet skal udfyldes (conceptual model, mapping)" },
           { title: "States frem for skærme", text: "loading, success og næste skridt viser, hvad systemet gør (feedback, Gulf of Evaluation)" },
-          { title: "Valgfri hjælp", text: "så Emma kan følge trinene uden at skulle igennem forklaringer" },
         ],
         image: {
           src: vuuhImg("error-inline.png"),
@@ -239,7 +237,7 @@ const examCases = [
 
     walkthrough: {
       label: "Visuel gennemgang",
-      intro: "Det nye flow går fra velkomst til forbundet butik i fire trin og kan klikkes igennem i prototypen nedenfor.",
+      intro: "Flowet går fra velkomst til forbundet butik i fire trin og kan klikkes igennem nedenfor.",
       flows: [
         {
           title: "Onboarding-flowet",
@@ -334,6 +332,225 @@ const examCases = [
       "W3C: Web Content Accessibility Guidelines (WCAG) 2.2",
       "Undervisning: UX Audit, Interaction Redesign og Accessibility Design Check",
       "Skærmbilleder af Vuuhs nuværende platform tilhører Vuuh.",
+    ],
+  },
+  {
+    slug: "mellemrum",
+    eyebrow: "Product Optimization · Case 1",
+    title: "Mellemrum",
+    lead: "En hurtigt bygget React-prototype for en kultur- og eventplatform i Aarhus, udviklet til en robust, tilgængelig og vedligeholdelsesvenlig løsning med et tilmeldingsflow, der virker.",
+    heroImage: mellemrumImg("landing.jpg"),
+    heroAlt: "Forsiden af Mellemrum: \"Find plads til noget nyt.\"",
+    heroWide: true,
+    facts: [
+      { label: "Opgave", value: "Fra prototype til produktionsklar React" },
+      { label: "Team", value: "Individuelt projekt" },
+      { label: "Teknologi", value: "React, Supabase, GitHub Pages" },
+    ],
+    contribution:
+      "Jeg stod for hele forløbet: audit, prioritering, forbedringer i koden, datamodellen i Supabase og deployment.",
+
+    sections: [
+      {
+        id: "udfordring",
+        label: "Case og udfordring",
+        paragraphs: [
+          "Mellemrum er en lokal kultur- og eventplatform, hvor besøgende tilmelder sig events, og arrangører ser tilmeldingerne. Prototypen var bygget hurtigt for at afprøve idéen: Koden var svær at videreudvikle, fejl og langsomme svar blev ikke håndteret, og datamodellen gentog oplysninger. Værst af alt gemte tilmeldingsformularen intet. Den skrev kun til konsollen.",
+          "Opgaven var ikke at ændre mest muligt, men at finde de vigtigste problemer, forbedre dem og dokumentere effekten.",
+        ],
+      },
+      {
+        id: "undersoegelse",
+        label: "Undersøgelse og prioritering",
+        stats: [
+          { value: "11", label: "fund i auditten" },
+          { value: "6", label: "fokusområder fra casen" },
+          { value: "7", label: "forbedringer i hver sin branch" },
+          { value: "6", label: "rettelser fra en afsluttende QA" },
+        ],
+        paragraphs: [
+          "Jeg auditerede prototypen ud fra casens seks fokusområder og arbejdede mod den rigtige Supabase-database, så hvert fund kunne underbygges med data. Tilmeldinger havde ingen relation til events, Dokk1 og Godsbanen stod med identiske adresser på flere events, og et ugyldigt event-id gav en blank side.",
+          "Jeg prioriterede efter konsekvensen for brugeren og casens centrale krav: først tilmeldingsflowet og robustheden, derefter accessibility, arkitektur, datamodel og performance.",
+        ],
+      },
+      {
+        id: "loesning",
+        label: "Løsning og faglige valg",
+        paragraphs: [
+          "Hver forbedring blev lavet i sin egen branch fra main, verificeret og merget, så historikken kan følges i repoet.",
+        ],
+        choices: [
+          { title: "Tilmelding gemmes", text: "i Supabase og forbindes til eventet med en fremmednøgle" },
+          { title: "UI-states", text: "loading, fejl, tom liste og en 404-side ved ugyldigt event" },
+          { title: "Accessibility", text: "alt-tekst, label på e-mail, sidetitel og fokus ved sideskift" },
+          { title: "Arkitektur", text: "delt API-opsætning og en fælles Footer-komponent" },
+          { title: "Datamodel", text: "venues i egen tabel, så en adresse rettes ét sted" },
+          { title: "Performance", text: "billeder i visningsstørrelse, lazy loading og code-splitting" },
+        ],
+        dataModel: {
+          title: "Datamodellen før og efter",
+          before: [
+            {
+              name: "events",
+              fields: [
+                { name: "id" },
+                { name: "title" },
+                { name: "date" },
+                { name: "venueName", repeated: true },
+                { name: "venueAddress", repeated: true },
+                { name: "venuePostalCode", repeated: true },
+                { name: "venueCity", repeated: true },
+                { name: "venueWebsite", repeated: true },
+              ],
+            },
+            {
+              name: "registrations",
+              fields: [
+                { name: "id" },
+                { name: "name" },
+                { name: "email" },
+                { name: "eventTitle", repeated: true },
+                { name: "eventDate", repeated: true },
+                { name: "eventLocation", repeated: true },
+              ],
+            },
+          ],
+          beforeNote: "Ingen relationer: Venue-data gentages på hvert event, og en tilmelding gemmer eventet som løs tekst.",
+          after: [
+            {
+              name: "venues",
+              fields: [{ name: "id" }, { name: "name" }, { name: "address" }, { name: "postalCode" }, { name: "city" }, { name: "website" }],
+            },
+            {
+              name: "events",
+              fields: [{ name: "id" }, { name: "title" }, { name: "date" }, { name: "venueId", key: true }],
+            },
+            {
+              name: "registrations",
+              fields: [{ name: "id" }, { name: "name" }, { name: "email" }, { name: "eventId", key: true }],
+            },
+          ],
+          afterNote: "To en-til-mange-relationer med fremmednøgler: Et venue har mange events, og et event har mange tilmeldinger.",
+        },
+        code: {
+          title: "Tilmeldingen før og efter",
+          before: {
+            label: "Før · EventPage.jsx",
+            code: `async function handleSubmit(eventSubmit) {
+  eventSubmit.preventDefault();
+  console.log({ name, email, event: event.title });
+}`,
+          },
+          after: {
+            label: "Efter · EventSignupForm.jsx",
+            code: `async function handleSubmit(eventSubmit) {
+  eventSubmit.preventDefault();
+  setIsSubmitting(true);
+  setSubmitError(null);
+
+  try {
+    const response = await fetch(\`\${SUPABASE_URL}/registrations\`, {
+      method: "POST",
+      headers: { ...headers, Prefer: "return=minimal" },
+      body: JSON.stringify({ name, email, eventId: event.id, status: "Ny" })
+    });
+
+    if (!response.ok) {
+      throw new Error(\`Tilmelding mislykkedes (status \${response.status})\`);
+    }
+
+    setIsSubmitted(true);
+  } catch (error) {
+    console.error("Tilmelding fejlede:", error);
+    setSubmitError("Vi kunne ikke gemme din tilmelding. Prøv venligst igen.");
+  } finally {
+    setIsSubmitting(false);
+  }
+}`,
+          },
+        },
+      },
+    ],
+
+    result: {
+      label: "Resultat og dokumentation",
+      paragraphs: [
+        "Alle forbedringer er verificeret med build, lint og direkte kald mod Supabase. En afsluttende QA-gennemgang fandt fejl, auditten ikke fangede, fx at oversigten viste eventets dato i stedet for tilmeldingsdatoen.",
+      ],
+      comparison: {
+        headers: ["", "Prototypen", "Nu"],
+        rows: [
+          ["Tilmelding", "Skrives kun til konsollen", "Gemmes i Supabase (201 Created) og forbindes til eventet"],
+          ["Ugyldigt event", "Blank side", "404-side med vej videre"],
+          ["Datamodel", "Gentagne venue-data og ingen relation", "9 events på 7 venues med fremmednøgler"],
+          ["Billede i oversigten", "1,19 MB", "85 KB (−93 %)"],
+          ["Første indlæsning", "Hele appen i ét bundle", "Hver side i sin egen chunk"],
+        ],
+      },
+      bars: {
+        title: "Ét eventbillede i oversigten",
+        unit: "KB",
+        items: [
+          { label: "Før: originalen fra Unsplash", value: 1190, display: "1,19 MB" },
+          { label: "Efter: tilpasset visningsstørrelsen", value: 85, display: "85 KB" },
+        ],
+        note: "93 % mindre data pr. billede, og forsiden viser op til ni events ad gangen.",
+      },
+      pairsIntro: "Før og efter i browseren:",
+      pairs: [
+        {
+          before: { src: mellemrumImg("signup-before.png"), alt: "Udfyldt tilmeldingsformular, der ikke gemte noget" },
+          after: { src: mellemrumImg("signup-after.png"), alt: "Tilmeldingsformularen viser \"Tak! Din tilmelding er registreret.\"" },
+          caption: "Tilmeldingen gemmes og bekræftes",
+        },
+        {
+          before: { src: mellemrumImg("registrations-before.png"), alt: "Den interne oversigt med to tilmeldinger" },
+          after: { src: mellemrumImg("registrations-after.png"), alt: "Den interne oversigt med den nye tilmelding fra Lars Larsen" },
+          caption: "Den nye tilmelding vises i arrangørens oversigt",
+        },
+        {
+          before: { src: mellemrumImg("invalid-event-before.png"), alt: "Blank side ved et ugyldigt event-id" },
+          after: { src: mellemrumImg("invalid-event-after.png"), alt: "404-side med knappen \"Gå til forsiden\"" },
+          caption: "Ugyldigt event-id: blank side → 404-side",
+        },
+      ],
+      after: "Der er ikke lavet test med brugere eller skærmlæser, så accessibility er verificeret i koden.",
+    },
+
+    reflection: {
+      label: "Faglig refleksion",
+      paragraphs: [
+        "Det vigtigste valg var at arbejde mod den rigtige database fra start. En faktisk duplikeret række eller en målt filstørrelse gjorde prioriteringen lettere at begrunde end antagelser.",
+        "Ét fravalg blev revurderet: Jeg beholdt først de gamle tekstfelter på tilmeldinger for at kunne sammenligne, men slettede dem senere, fordi en ren datamodel vejede tungere.",
+        "Næste skridt er en test med skærmlæser og at begrænse de felter, der hentes fra Supabase.",
+      ],
+    },
+
+    business: {
+      label: "Forretningspotentiale",
+      items: [
+        { title: "Besøgende", text: "kan nu tilmelde sig, får besked ved fejl og hurtigere sider på mobil." },
+        { title: "Arrangører", text: "ser rigtige tilmeldinger forbundet til events og retter et venue ét sted." },
+        { title: "Platformen", text: "får en kodebase og datamodel, der gør nye funktioner billigere at bygge." },
+      ],
+      basis: "Vurderingen bygger på målinger mod den levende database og build-output, ikke på brugerdata.",
+    },
+
+    links: [
+      {
+        label: "GitHub-repo",
+        href: "https://github.com/Jarl002/3-Semester---Case-1---Mellemrum-",
+      },
+      {
+        label: "Deployet løsning",
+        href: "https://jarl002.github.io/3-Semester---Case-1---Mellemrum-/",
+      },
+    ],
+
+    sources: [
+      "Case 1-beskrivelse og Mellemrum-skabelonen (github.com/cederdorff/mellemrum)",
+      "Undervisning: React, Supabase og accessibility",
+      "Eventbilleder: Unsplash",
     ],
   },
 ];
